@@ -65,10 +65,6 @@ view: looker_list {
     type: string
     sql: ${TABLE}.rsvp_status ;;
   }
-  measure: rsvp_status_confirmed {
-    type: count
-    filters: [rsvp_status: "CONFIRMED"]
-  }
   dimension: source {
     type: string
     sql: ${TABLE}.source ;;
@@ -91,7 +87,7 @@ view: looker_list {
   }
   measure: count {
     type: count
-    drill_fields: [last_name, first_name]
+    drill_fields: [full_name, empresa]
   }
 
 }
