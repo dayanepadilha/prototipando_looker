@@ -67,7 +67,7 @@ view: looker_list {
   }
   measure: rsvp_status_confirmed {
     type: count
-    filters: [rsvp_status: "confirmed"]
+    filters: [rsvp_status: "CONFIRMED"]
   }
   dimension: source {
     type: string
