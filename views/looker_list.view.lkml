@@ -31,7 +31,7 @@ view: looker_list {
   }
   dimension: full_name {
     type: string
-    sql: CONCAT(${first_name}, ' ', ${last_name}) ;;
+    sql: upper(CONCAT(${first_name}, ' ', ${last_name})) ;;
   }
   dimension: guest_type {
     type: string
