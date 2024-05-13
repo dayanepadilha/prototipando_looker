@@ -87,7 +87,7 @@ view: looker_list {
   }
   measure: count {
     type: count
-    drill_fields: [full_name, empresa]
+    drill_fields: [full_name]
   }
 
 }
