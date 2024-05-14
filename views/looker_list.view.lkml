@@ -13,9 +13,11 @@ view: looker_list {
     type: string
     sql: ${TABLE}.contacts ;;
   }
-  dimension: create_time {
-    type: string
-    sql: ${TABLE}.create_time ;;
+  dimension_group: create_time {
+    datatype: timestamp
+    timeframes: [date,month,year,time]
+    type: time
+    sql: cast(${TABLE}.create_time as datetime) ;;
   }
   dimension: email {
     type: string
