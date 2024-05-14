@@ -13,10 +13,9 @@ view: looker_list {
     type: string
     sql: ${TABLE}.contacts ;;
   }
-  dimension_group: create_time {
-    datatype: timestamp
-    timeframes: [date,month,year,time]
+  dimension_group: create {
     type: time
+    timeframes: [raw, time, date, week, month, quarter, year]
     sql: ${TABLE}.create_time ;;
   }
   dimension: email {
@@ -59,8 +58,9 @@ view: looker_list {
     type: string
     sql: ${TABLE}.registration_code ;;
   }
-  dimension: registration_time {
-    type: string
+  dimension_group: registration {
+    type: time
+    timeframes: [raw, time, date, week, month, quarter, year]
     sql: ${TABLE}.registration_time ;;
   }
   dimension: rsvp_status {
@@ -75,8 +75,9 @@ view: looker_list {
     type: string
     sql: ${TABLE}.subscribers ;;
   }
-  dimension: update_time {
-    type: string
+  dimension_group: update {
+    type: time
+    timeframes: [raw, time, date, week, month, quarter, year]
     sql: ${TABLE}.update_time ;;
   }
   dimension: uso_de_imagem {
@@ -89,7 +90,6 @@ view: looker_list {
   }
   measure: count {
     type: count
-    drill_fields: [full_name]
+    drill_fields: [last_name, first_name]
   }
-
 }
