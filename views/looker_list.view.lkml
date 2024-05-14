@@ -8,7 +8,7 @@ view: looker_list {
   dimension: checkparceiro {
     label: "Check Parceiro"
     type: string
-    sql: ${TABLE}.checkparceiro ;;
+    sql: case when ${TABLE}.checkparceiro is null then "Não Respondido" else ${TABLE}.checkparceiro end;;
   }
   dimension: contacts {
     type: string
