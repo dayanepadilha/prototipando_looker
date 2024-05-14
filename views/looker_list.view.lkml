@@ -6,6 +6,7 @@ view: looker_list {
     sql: ${TABLE}.cargo ;;
   }
   dimension: checkparceiro {
+    label: "Check Parceiro"
     type: string
     sql: ${TABLE}.checkparceiro ;;
   }
@@ -24,11 +25,11 @@ view: looker_list {
   }
   dimension: empresa {
     type: string
-    sql: ${TABLE}.empresa ;;
+    sql: upper(${TABLE}.empresa) ;;
   }
   dimension: first_name {
     type: string
-    sql: ${TABLE}.first_name ;;
+    sql: upper(${TABLE}.first_name) ;;
   }
   dimension: full_name {
     type: string
@@ -40,7 +41,7 @@ view: looker_list {
   }
   dimension: last_name {
     type: string
-    sql: ${TABLE}.last_name ;;
+    sql: upper(${TABLE}.last_name) ;;
   }
   dimension: marketing_opt_in {
     type: string
@@ -85,11 +86,12 @@ view: looker_list {
     sql: ${TABLE}.uso_de_imagem ;;
   }
   dimension: vaipresencial {
+    label: "Vai Presencial"
     type: string
     sql: ${TABLE}.vaipresencial ;;
   }
   measure: count {
     type: count
-    drill_fields: [last_name, first_name]
+    drill_fields: [full_name]
   }
 }
