@@ -17,7 +17,7 @@ view: looker_list {
     datatype: timestamp
     timeframes: [date,month,year,time]
     type: time
-    sql: cast(${TABLE}.create_time as datetime) ;;
+    sql: ${TABLE}.create_time ;;
   }
   dimension: email {
     type: string
