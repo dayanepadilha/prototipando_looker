@@ -58,6 +58,7 @@ view: looker_list {
     sql: ${TABLE}.personal_code ;;
   }
   dimension: region_code {
+    label: "Região"
     type: string
     sql: ${TABLE}.region_code ;;
   }
