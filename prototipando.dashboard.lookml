@@ -1,4 +1,3 @@
----
 - dashboard: prototipando_ideias__looker__gemini
   title: PROTOTIPANDO IDEIAS - LOOKER + GEMINI
   layout: newspaper
