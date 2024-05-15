@@ -21,6 +21,7 @@ view: looker_list {
     sql: ${TABLE}.create_time ;;
   }
   dimension: email {
+    hidden: yes
     type: string
     sql: ${TABLE}.email ;;
   }
