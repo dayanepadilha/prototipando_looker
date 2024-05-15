@@ -11,6 +11,7 @@ view: looker_list {
     sql: case when ${TABLE}.checkparceiro is null then "Sem Resposta" else ${TABLE}.checkparceiro end;;
   }
   dimension: contacts {
+    label: "Contatos"
     type: string
     sql: ${TABLE}.contacts ;;
   }
@@ -28,10 +29,12 @@ view: looker_list {
     sql: case when upper(${TABLE}.empresa) is null then "Sem Resposta" else upper(${TABLE}.empresa) end;;
   }
   dimension: first_name {
+    label: "Primeiro Nome"
     type: string
     sql: upper(${TABLE}.first_name) ;;
   }
   dimension: full_name {
+    label: "Nome Completo"
     type: string
     sql: upper(CONCAT(${first_name}, ' ', ${last_name})) ;;
   }
@@ -40,6 +43,7 @@ view: looker_list {
     sql: ${TABLE}.guest_type ;;
   }
   dimension: last_name {
+    label: "Último Nome"
     type: string
     sql: upper(${TABLE}.last_name) ;;
   }
@@ -65,6 +69,7 @@ view: looker_list {
     sql: ${TABLE}.registration_time ;;
   }
   dimension: rsvp_status {
+    label: "Status"
     type: string
     sql: ${TABLE}.rsvp_status ;;
   }
@@ -91,6 +96,7 @@ view: looker_list {
     sql: case when ${TABLE}.vaipresencial is null then "Sem Resposta" else ${TABLE}.vaipresencial end;;
   }
   measure: count {
+    label: "Total"
     type: count
     drill_fields: [full_name, empresa]
   }
