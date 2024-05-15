@@ -2,6 +2,7 @@ connection: "demo_sura"
 
 # include all the views
 include: "/views/**/*.view.lkml"
+include: "/dashboards/*.dashboard.lookml"
 
 datagroup: demo_prototipando_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
