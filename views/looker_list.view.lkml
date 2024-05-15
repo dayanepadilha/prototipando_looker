@@ -8,7 +8,7 @@ view: looker_list {
   dimension: checkparceiro {
     label: "Check Parceiro"
     type: string
-    sql: case when ${TABLE}.checkparceiro is null then "Não Respondido" else ${TABLE}.checkparceiro end;;
+    sql: case when ${TABLE}.checkparceiro is null then "Sem Resposta" else ${TABLE}.checkparceiro end;;
   }
   dimension: contacts {
     type: string
@@ -25,7 +25,7 @@ view: looker_list {
   }
   dimension: empresa {
     type: string
-    sql: upper(${TABLE}.empresa) ;;
+    sql: case when upper(${TABLE}.empresa) is null then "Sem Resposta" else upper(${TABLE}.empresa) end;;
   }
   dimension: first_name {
     type: string
@@ -88,7 +88,7 @@ view: looker_list {
   dimension: vaipresencial {
     label: "Vai Presencial"
     type: string
-    sql: ${TABLE}.vaipresencial ;;
+    sql: case when ${TABLE}.vaipresencial is null then "Sem Resposta" else ${TABLE}.vaipresencial end;;
   }
   measure: count {
     type: count
