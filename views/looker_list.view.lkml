@@ -25,6 +25,7 @@ view: looker_list {
     sql: ${TABLE}.email ;;
   }
   dimension: empresa {
+    label: "Empresa"
     type: string
     sql: case when upper(${TABLE}.empresa) is null then "Sem Resposta" else upper(${TABLE}.empresa) end;;
   }
