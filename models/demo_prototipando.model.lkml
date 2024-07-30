@@ -1,21 +1,17 @@
 connection: "demo_sura"
 
-include: "/views/*.view.lkml"                # include all views in the views/ folder in this project
-# include: "/**/*.view.lkml"                 # include all views in this project
-# include: "my_dashboard.dashboard.lookml"   # include a LookML dashboard called my_dashboard
+# include all the views
+include: "/views/**/*.view.lkml"
+include: "/dashboards/*.dashboard.lookml"
 
-# # Select the views that should be a part of this model,
-# # and define the joins that connect them together.
-#
-# explore: order_items {
-#   join: orders {
-#     relationship: many_to_one
-#     sql_on: ${orders.id} = ${order_items.order_id} ;;
-#   }
-#
-#   join: users {
-#     relationship: many_to_one
-#     sql_on: ${users.id} = ${orders.user_id} ;;
-#   }
-# }
- explore: looker_list {}
+datagroup: demo_prototipando_default_datagroup {
+  # sql_trigger: SELECT MAX(id) FROM etl_log;;
+  max_cache_age: "1 hour"
+}
+
+persist_with: demo_prototipando_default_datagroup
+
+explore: looker_list {
+  group_label: "Prototipando Ideias - Looker"
+  label: "Looker"
+}
