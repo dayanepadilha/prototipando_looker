@@ -19,6 +19,7 @@ view: looker_list {
     type: time
     timeframes: [raw, time, date, week, month, quarter, year]
     sql: ${TABLE}.create_time ;;
+    convert_tz: yes
   }
   dimension: email {
     hidden: yes
