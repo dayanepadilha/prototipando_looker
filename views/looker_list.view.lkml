@@ -69,7 +69,7 @@ view: looker_list {
   }
   dimension_group: registration {
     type: time
-    timeframes: [raw, time, date, week, month, quarter, year]
+    timeframes: [raw, time, date, week, month, quarter, year, month_name]
     sql: ${TABLE}.registration_time ;;
   }
   dimension: rsvp_status {
