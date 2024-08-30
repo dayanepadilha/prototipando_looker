@@ -15,6 +15,10 @@ view: looker_list {
     type: string
     sql: ${TABLE}.contacts ;;
   }
+  dimension: contato {
+    sql: ${contacts} ;;
+  }
+
   dimension_group: create {
     type: time
     timeframes: [raw, time, date, week, month, quarter, year]
