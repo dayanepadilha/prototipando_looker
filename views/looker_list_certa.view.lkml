@@ -34,10 +34,10 @@ view: looker_list {
     type: string
     sql: upper(${TABLE}.first_name) ;;
   }
+
   dimension: full_name {
-    label: "Nome Completo"
     type: string
-    sql: upper(CONCAT(${first_name}, ' ', ${last_name})) ;;
+    sql: CONCAT(${first_name}, ' ', ${last_name}) ;;
   }
   dimension: guest_type {
     type: string
