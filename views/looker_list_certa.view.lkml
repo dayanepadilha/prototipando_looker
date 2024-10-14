@@ -1,4 +1,4 @@
-view: looker_list {
+view: looker_list_certa {
   sql_table_name: `dayanepadilha-477-202302281139.prototipando_looker.looker_list` ;;
 
   dimension: cargo {

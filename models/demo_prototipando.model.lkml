@@ -11,7 +11,7 @@ datagroup: demo_prototipando_default_datagroup {
 
 persist_with: demo_prototipando_default_datagroup
 
-explore: looker_list {
+explore: looker_list_certa{
   group_label: "Prototipando Ideias - Looker"
   label: "Looker"
 }
