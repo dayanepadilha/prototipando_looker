@@ -101,4 +101,9 @@ view: looker_list {
     type: count
     drill_fields: [full_name, empresa]
   }
+  measure: count_filtro {
+    label: "Total sem Resposta"
+    type: count
+    filters: [empresa: "Sem Resposta"]
+  }
 }
