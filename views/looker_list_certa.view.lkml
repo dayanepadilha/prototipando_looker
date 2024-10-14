@@ -106,4 +106,9 @@ view: looker_list_certa {
     type: count
     filters: [empresa: "Sem Resposta"]
   }
+  measure: subtracao {
+    label: "Total - Total sem Resposta"
+    type: number
+    sql: ${count}-${count_filtro} ;;
+  }
 }
