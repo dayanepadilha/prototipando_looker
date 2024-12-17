@@ -25,6 +25,12 @@ view: looker_list {
     sql: ${TABLE}.create_time ;;
     convert_tz: yes
   }
+
+  dimension: create_max {
+    type: date
+    sql: max(${create_date}) ;;
+  }
+
   dimension: email {
     hidden: yes
     type: string
