@@ -1,4 +1,4 @@
-view: looker_list {
+view: looker_list_certa {
   sql_table_name: `dayanepadilha-477-202302281139.prototipando_looker.looker_list` ;;
 
   dimension: cargo {
@@ -15,24 +15,12 @@ view: looker_list {
     type: string
     sql: ${TABLE}.contacts ;;
   }
-  dimension: contato {
-    sql: ${contacts} ;;
-  }
-
   dimension_group: create {
     type: time
     timeframes: [raw, time, date, week, month, quarter, year]
     sql: ${TABLE}.create_time ;;
-    convert_tz: yes
   }
-
-  dimension: create_max {
-    type: date
-    sql: max(${create_date}) ;;
-  }
-
   dimension: email {
-    hidden: yes
     type: string
     sql: ${TABLE}.email ;;
   }
@@ -46,10 +34,10 @@ view: looker_list {
     type: string
     sql: upper(${TABLE}.first_name) ;;
   }
+
   dimension: full_name {
-    label: "Nome Completo"
     type: string
-    sql: upper(CONCAT(${first_name}, ' ', ${last_name})) ;;
+    sql: CONCAT(${first_name}, ' ', ${last_name}) ;;
   }
   dimension: guest_type {
     type: string
@@ -69,7 +57,6 @@ view: looker_list {
     sql: ${TABLE}.personal_code ;;
   }
   dimension: region_code {
-    label: "Região"
     type: string
     sql: ${TABLE}.region_code ;;
   }
@@ -79,7 +66,7 @@ view: looker_list {
   }
   dimension_group: registration {
     type: time
-    timeframes: [raw, time, date, week, month, quarter, year, month_name]
+    timeframes: [raw, time, date, week, month, quarter, year]
     sql: ${TABLE}.registration_time ;;
   }
   dimension: rsvp_status {
@@ -113,5 +100,15 @@ view: looker_list {
     label: "Total"
     type: count
     drill_fields: [full_name, empresa]
+  }
+  measure: count_filtro {
+    label: "Total sem Resposta"
+    type: count
+    filters: [empresa: "Sem Resposta"]
+  }
+  measure: subtracao {
+    label: "Total - Total sem Resposta"
+    type: number
+    sql: ${count}-${count_filtro} ;;
   }
 }
