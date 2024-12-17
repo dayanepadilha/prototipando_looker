@@ -21,9 +21,9 @@ view: looker_list_certa {
     sql: ${TABLE}.create_time ;;
   }
 
-  dimension: create_max {
-    type: string
-    sql: max(${create_date}) ;;
+  measure: create_max {
+    type: max
+    sql: ${create_date} ;;
   }
 
 
