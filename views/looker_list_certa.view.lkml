@@ -23,6 +23,7 @@ view: looker_list_certa {
 
   dimension_group: create_max {
     type: time
+    timeframes: [date]
     sql: max(${create_date}) ;;
   }
 
