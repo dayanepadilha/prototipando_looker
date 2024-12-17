@@ -20,6 +20,13 @@ view: looker_list_certa {
     timeframes: [raw, time, date, week, month, quarter, year]
     sql: ${TABLE}.create_time ;;
   }
+
+  dimension: create_max {
+    type: date
+    sql: max(${create_date}) ;;
+  }
+
+
   dimension: email {
     type: string
     sql: ${TABLE}.email ;;
