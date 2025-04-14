@@ -118,7 +118,7 @@ measure: teste_soma {
   }
   measure: subtracao {
     label: "Total - Total sem Resposta"
-    type: running_total
+    type: number
     sql: ${count}-${count_filtro} ;;
   }
 }
