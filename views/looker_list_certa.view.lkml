@@ -121,4 +121,8 @@ measure: teste_soma {
     type: number
     sql: ${count}-${count_filtro} ;;
   }
+  measure: nada_muda{
+    type: max
+    sql: ${subtracao} ;;
+  }
 }
