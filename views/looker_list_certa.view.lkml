@@ -25,7 +25,10 @@ view: looker_list_certa {
     type: date
     sql: max(${create_date}) ;;
   }
-
+measure: teste_soma {
+  can_filter: no
+  sql: ${subtracao} ;;
+}
 
   dimension: email {
     type: string
