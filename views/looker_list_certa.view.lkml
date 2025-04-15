@@ -123,6 +123,6 @@ measure: teste_soma {
   }
   measure: nada_muda{
     type: max
-    sql: ${subtracao} ;;
+    sql: sum(${email}) ;;
   }
 }
