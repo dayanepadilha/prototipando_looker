@@ -122,7 +122,7 @@ measure: teste_soma {
     sql: ${count}-${count_filtro} ;;
   }
   measure: nada_muda{
-    type: max
-    sql: sum(${email}) ;;
+    type: number
+    sql:count(${email});;
   }
 }
