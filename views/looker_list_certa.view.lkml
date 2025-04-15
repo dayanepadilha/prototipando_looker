@@ -125,7 +125,7 @@ measure: teste_soma {
     type: number
     sql:count(${email});;
   }
-  dimension: trava_medida {
+  measure: trava_medida {
     type: number
     sql: ${subtracao} ;;
   }
