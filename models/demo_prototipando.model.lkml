@@ -18,6 +18,6 @@ explore: looker_list_certa{
   join: temp_1 {
     type: left_outer
     relationship: many_to_many
-    sql_on: ${looker_list_certa.email} = ${temp_1.email} ;;
+    sql_on: ${temp_1.nao_muda} ;;
   }
 }

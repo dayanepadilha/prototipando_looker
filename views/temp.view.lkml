@@ -32,19 +32,19 @@ view: temp {
 view: temp_1 {
   derived_table: {
     sql: SELECT
-    email,
-       count(email) as dim_nao_muda
+      --email,
+      count(email) as dim_nao_muda
       FROM `dayanepadilha-477-202302281139.prototipando_looker.looker_list`
-      group by email
+      --group by email
       ;;
   }
 #
 #   # Define your dimensions and measures here, like this:
-dimension: email{
-  type: string
-  primary_key: yes
-  sql: ${TABLE}.email ;;
-}
+# dimension: email{
+#   type: string
+#   primary_key: yes
+#   sql: ${TABLE}.email ;;
+# }
   dimension: nao_muda {
     type: number
     sql: ${TABLE}.dim_nao_muda ;;
