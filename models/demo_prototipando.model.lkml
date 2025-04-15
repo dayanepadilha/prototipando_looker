@@ -14,4 +14,10 @@ persist_with: demo_prototipando_default_datagroup
 explore: looker_list_certa{
   group_label: "Prototipando Ideias - Looker"
   label: "Looker"
+
+  join: temp_1 {
+    type: left_outer
+    relationship: many_to_many
+    sql_on: ${looker_list_certa.email} = ${temp_1.email} ;;
+  }
 }
