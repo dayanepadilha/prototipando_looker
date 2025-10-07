@@ -21,3 +21,5 @@ explore: looker_list_certa{
     sql_on: ${temp_1.nao_muda} ;;
   }
 }
+
+explore: teste_natura {}
