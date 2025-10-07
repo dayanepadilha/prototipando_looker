@@ -1,6 +1,6 @@
 view: teste_natura {
   # # You can specify the table name if it's different from the view name:
-   sql_table_name: 'teste-lspnatura.projeto_natura.teste_projeto_natura' ;;
+   sql_table_name: `teste-lspnatura.projeto_natura.teste_projeto_natura` ;;
   #
   # # Define your dimensions and measures here, like this:
    dimension: user_id {
