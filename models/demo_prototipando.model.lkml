@@ -14,9 +14,7 @@ persist_with: demo_prototipando_default_datagroup
 explore: looker_list_certa{
   group_label: "Prototipando Ideias - Looker"
   label: "Looker"
-  always_filter: {
-    filters: [looker_list_certa.create_date: "7 dias"]
-  }
+  sql_always_where: ${create_date} = "7 dias";;
   join: temp_1 {
     type: left_outer
     relationship: many_to_many
