@@ -14,7 +14,6 @@ persist_with: demo_prototipando_default_datagroup
 explore: looker_list_certa{
   group_label: "Prototipando Ideias - Looker"
   label: "Looker"
-  sql_always_where: ${create_date} = "2025-01-01";;
   join: temp_1 {
     type: left_outer
     relationship: many_to_many
