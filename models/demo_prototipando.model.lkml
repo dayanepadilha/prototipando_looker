@@ -11,7 +11,14 @@ datagroup: demo_prototipando_default_datagroup {
 
 persist_with: demo_prototipando_default_datagroup
 
-explore: looker_list {
+explore: looker_list_certa{
   group_label: "Prototipando Ideias - Looker"
   label: "Looker"
+  join: temp_1 {
+    type: left_outer
+    relationship: many_to_many
+    sql_on: ${temp_1.nao_muda} ;;
+  }
 }
+
+explore: teste_natura {}

@@ -8,10 +8,10 @@
   - title: prototipando
     name: prototipando
     model: demo_prototipando
-    explore: looker_list
+    explore: looker_list_certa
     type: single_value
-    fields: [looker_list.count]
-    sorts: [looker_list.count desc 0]
+    fields: [looker_list_certa.count]
+    sorts: [looker_list_certa.count desc 0]
     limit: 500
     column_limit: 50
     custom_color_enabled: true
@@ -27,7 +27,7 @@
     hidden_pivots: {}
     defaults_version: 1
     listen:
-      Região: looker_list.region_code
+      Região: looker_list_certa.region_code
     row: 1
     col: 0
     width: 6
@@ -35,12 +35,12 @@
   - title: Confirmados
     name: Confirmados
     model: demo_prototipando
-    explore: looker_list
+    explore: looker_list_certa
     type: single_value
-    fields: [looker_list.count]
+    fields: [looker_list_certa.count]
     filters:
-      looker_list.rsvp_status: CONFIRMED
-    sorts: [looker_list.count desc 0]
+      looker_list_certa.rsvp_status: CONFIRMED
+    sorts: [looker_list_certa.count desc 0]
     limit: 500
     column_limit: 50
     custom_color_enabled: true
@@ -56,7 +56,7 @@
     hidden_pivots: {}
     defaults_version: 1
     listen:
-      Região: looker_list.region_code
+      Região: looker_list_certa.region_code
     row: 1
     col: 6
     width: 6
@@ -64,13 +64,13 @@
   - title: New Tile
     name: New Tile
     model: demo_prototipando
-    explore: looker_list
+    explore: looker_list_certa
     type: single_value
-    fields: [looker_list.count]
+    fields: [looker_list_certa.count]
     filters:
-      looker_list.vaipresencial: Sim
-      looker_list.rsvp_status: CONFIRMED
-    sorts: [looker_list.count desc 0]
+      looker_list_certa.vaipresencial: Sim
+      looker_list_certa.rsvp_status: CONFIRMED
+    sorts: [looker_list_certa.count desc 0]
     limit: 500
     column_limit: 50
     custom_color_enabled: true
@@ -86,7 +86,7 @@
     hidden_pivots: {}
     defaults_version: 1
     listen:
-      Região: looker_list.region_code
+      Região: looker_list_certa.region_code
     row: 1
     col: 12
     width: 6
@@ -94,13 +94,13 @@
   - title: Online
     name: Online
     model: demo_prototipando
-    explore: looker_list
+    explore: looker_list_certa
     type: single_value
-    fields: [looker_list.count]
+    fields: [looker_list_certa.count]
     filters:
-      looker_list.vaipresencial: Não
-      looker_list.rsvp_status: CONFIRMED
-    sorts: [looker_list.count desc 0]
+      looker_list_certa.vaipresencial: Não
+      looker_list_certa.rsvp_status: CONFIRMED
+    sorts: [looker_list_certa.count desc 0]
     limit: 500
     column_limit: 50
     custom_color_enabled: true
@@ -116,7 +116,7 @@
     hidden_pivots: {}
     defaults_version: 1
     listen:
-      Região: looker_list.region_code
+      Região: looker_list_certa.region_code
     row: 1
     col: 18
     width: 6
@@ -124,14 +124,14 @@
   - title: Total de Inscritos por Dia
     name: Total de Inscritos por Dia
     model: demo_prototipando
-    explore: looker_list
+    explore: looker_list_certa
     type: looker_line
-    fields: [looker_list.count, looker_list.vaipresencial, looker_list.registration_date]
-    pivots: [looker_list.vaipresencial]
-    fill_fields: [looker_list.registration_date]
+    fields: [looker_list_certa.count, looker_list_certa.vaipresencial, looker_list_certa.registration_date]
+    pivots: [looker_list_certa.vaipresencial]
+    fill_fields: [looker_list_certa.registration_date]
     filters:
-      looker_list.vaipresencial: "-Sem Resposta"
-    sorts: [looker_list.vaipresencial, looker_list.count desc 0]
+      looker_list_certa.vaipresencial: "-Sem Resposta"
+    sorts: [looker_list_certa.vaipresencial, looker_list_certa.count desc 0]
     limit: 500
     column_limit: 50
     x_axis_gridlines: false
@@ -163,9 +163,9 @@
       palette_id: 5d189dfc-4f46-46f3-822b-bfb0b61777b1
       options:
         steps: 5
-    y_axes: [{label: '', orientation: left, series: [{axisId: Não - looker_list.count,
-            id: Não - looker_list.count, name: Não}, {axisId: Sim - looker_list.count,
-            id: Sim - looker_list.count, name: Sim}], showLabels: false, showValues: false,
+    y_axes: [{label: '', orientation: left, series: [{axisId: Não - looker_list_certa.count,
+            id: Não - looker_list_certa.count, name: Não}, {axisId: Sim - looker_list_certa.count,
+            id: Sim - looker_list_certa.count, name: Sim}], showLabels: false, showValues: false,
         unpinAxis: false, tickDensity: default, tickDensityCustom: 5, type: linear}]
     x_axis_zoom: true
     y_axis_zoom: true
@@ -200,8 +200,8 @@
     header_font_size: 12
     rows_font_size: 12
     listen:
-      Região: looker_list.region_code
-      Status da Inscrição: looker_list.rsvp_status
+      Região: looker_list_certa.region_code
+      Status da Inscrição: looker_list_certa.rsvp_status
     row: 6
     col: 0
     width: 24
@@ -209,12 +209,12 @@
   - title: Nomes mais Inscritos
     name: Nomes mais Inscritos
     model: demo_prototipando
-    explore: looker_list
+    explore: looker_list_certa
     type: looker_wordcloud
-    fields: [looker_list.count, looker_list.first_name]
+    fields: [looker_list_certa.count, looker_list_certa.first_name]
     filters:
-      looker_list.count: ">7"
-    sorts: [looker_list.count desc]
+      looker_list_certa.count: ">7"
+    sorts: [looker_list_certa.count desc]
     limit: 500
     column_limit: 50
     color_application:
@@ -246,9 +246,9 @@
     y_axis_combined: true
     show_null_points: true
     interpolation: linear
-    y_axes: [{label: '', orientation: left, series: [{axisId: Não - looker_list.count,
-            id: Não - looker_list.count, name: Não}, {axisId: Sim - looker_list.count,
-            id: Sim - looker_list.count, name: Sim}], showLabels: false, showValues: false,
+    y_axes: [{label: '', orientation: left, series: [{axisId: Não - looker_list_certa.count,
+            id: Não - looker_list_certa.count, name: Não}, {axisId: Sim - looker_list_certa.count,
+            id: Sim - looker_list_certa.count, name: Sim}], showLabels: false, showValues: false,
         unpinAxis: false, tickDensity: default, tickDensityCustom: 5, type: linear}]
     x_axis_zoom: true
     y_axis_zoom: true
@@ -294,8 +294,8 @@
     showLegend: true
     truncate_column_names: false
     listen:
-      Região: looker_list.region_code
-      Status da Inscrição: looker_list.rsvp_status
+      Região: looker_list_certa.region_code
+      Status da Inscrição: looker_list_certa.rsvp_status
     row: 15
     col: 12
     width: 12
@@ -303,12 +303,12 @@
   - title: Total de Inscritos por Empresa
     name: Total de Inscritos por Empresa
     model: demo_prototipando
-    explore: looker_list
+    explore: looker_list_certa
     type: looker_grid
-    fields: [looker_list.count, looker_list.empresa]
+    fields: [looker_list_certa.count, looker_list_certa.empresa]
     filters:
-      looker_list.empresa: "-Sem Resposta"
-    sorts: [looker_list.count desc]
+      looker_list_certa.empresa: "-Sem Resposta"
+    sorts: [looker_list_certa.count desc]
     limit: 500
     column_limit: 50
     show_view_names: false
@@ -337,9 +337,9 @@
     truncate_header: true
     minimum_column_width: 75
     series_labels:
-      looker_list.count: Total de Inscritos
+      looker_list_certa.count: Total de Inscritos
     series_cell_visualizations:
-      looker_list.count:
+      looker_list_certa.count:
         is_active: true
     x_axis_gridlines: false
     y_axis_gridlines: true
@@ -363,9 +363,9 @@
     y_axis_combined: true
     show_null_points: true
     interpolation: linear
-    y_axes: [{label: '', orientation: left, series: [{axisId: Não - looker_list.count,
-            id: Não - looker_list.count, name: Não}, {axisId: Sim - looker_list.count,
-            id: Sim - looker_list.count, name: Sim}], showLabels: false, showValues: false,
+    y_axes: [{label: '', orientation: left, series: [{axisId: Não - looker_list_certa.count,
+            id: Não - looker_list_certa.count, name: Não}, {axisId: Sim - looker_list_certa.count,
+            id: Sim - looker_list_certa.count, name: Sim}], showLabels: false, showValues: false,
         unpinAxis: false, tickDensity: default, tickDensityCustom: 5, type: linear}]
     x_axis_zoom: true
     y_axis_zoom: true
@@ -397,8 +397,8 @@
     showLegend: true
     truncate_column_names: false
     listen:
-      Região: looker_list.region_code
-      Status da Inscrição: looker_list.rsvp_status
+      Região: looker_list_certa.region_code
+      Status da Inscrição: looker_list_certa.rsvp_status
     row: 24
     col: 0
     width: 12
@@ -406,12 +406,12 @@
   - title: Total de Inscritos por Cargo
     name: Total de Inscritos por Cargo
     model: demo_prototipando
-    explore: looker_list
+    explore: looker_list_certa
     type: looker_grid
-    fields: [looker_list.count, looker_list.cargo]
+    fields: [looker_list_certa.count, looker_list_certa.cargo]
     filters:
-      looker_list.cargo: "-NULL"
-    sorts: [looker_list.count desc]
+      looker_list_certa.cargo: "-NULL"
+    sorts: [looker_list_certa.count desc]
     limit: 500
     column_limit: 50
     show_view_names: false
@@ -440,9 +440,9 @@
     truncate_header: true
     minimum_column_width: 75
     series_labels:
-      looker_list.count: Total de Inscritos
+      looker_list_certa.count: Total de Inscritos
     series_cell_visualizations:
-      looker_list.count:
+      looker_list_certa.count:
         is_active: true
     x_axis_gridlines: false
     y_axis_gridlines: true
@@ -466,9 +466,9 @@
     y_axis_combined: true
     show_null_points: true
     interpolation: linear
-    y_axes: [{label: '', orientation: left, series: [{axisId: Não - looker_list.count,
-            id: Não - looker_list.count, name: Não}, {axisId: Sim - looker_list.count,
-            id: Sim - looker_list.count, name: Sim}], showLabels: false, showValues: false,
+    y_axes: [{label: '', orientation: left, series: [{axisId: Não - looker_list_certa.count,
+            id: Não - looker_list_certa.count, name: Não}, {axisId: Sim - looker_list_certa.count,
+            id: Sim - looker_list_certa.count, name: Sim}], showLabels: false, showValues: false,
         unpinAxis: false, tickDensity: default, tickDensityCustom: 5, type: linear}]
     x_axis_zoom: true
     y_axis_zoom: true
@@ -500,8 +500,8 @@
     showLegend: true
     truncate_column_names: false
     listen:
-      Região: looker_list.region_code
-      Status da Inscrição: looker_list.rsvp_status
+      Região: looker_list_certa.region_code
+      Status da Inscrição: looker_list_certa.rsvp_status
     row: 24
     col: 12
     width: 12
@@ -509,13 +509,13 @@
   - title: Total de Confirmados - Parceiros
     name: Total de Confirmados - Parceiros
     model: demo_prototipando
-    explore: looker_list
+    explore: looker_list_certa
     type: looker_pie
-    fields: [looker_list.count, looker_list.checkparceiro]
+    fields: [looker_list_certa.count, looker_list_certa.checkparceiro]
     filters:
-      looker_list.checkparceiro: ''
-      looker_list.rsvp_status: CONFIRMED
-    sorts: [looker_list.checkparceiro, looker_list.count desc]
+      looker_list_certa.checkparceiro: ''
+      looker_list_certa.rsvp_status: CONFIRMED
+    sorts: [looker_list_certa.checkparceiro, looker_list_certa.count desc]
     limit: 500
     column_limit: 50
     value_labels: labels
@@ -529,7 +529,7 @@
       Não: "#1A73E8"
       Sim: "#12B5CB"
     series_labels:
-      looker_list.count: Total de Inscritos
+      looker_list_certa.count: Total de Inscritos
     show_sql_query_menu_options: false
     show_totals: true
     show_row_totals: true
@@ -541,7 +541,7 @@
     size_to_fit: true
     minimum_column_width: 75
     series_cell_visualizations:
-      looker_list.count:
+      looker_list_certa.count:
         is_active: true
     table_theme: transparent
     limit_displayed_rows: false
@@ -573,9 +573,9 @@
     y_axis_combined: true
     show_null_points: true
     interpolation: linear
-    y_axes: [{label: '', orientation: left, series: [{axisId: Não - looker_list.count,
-            id: Não - looker_list.count, name: Não}, {axisId: Sim - looker_list.count,
-            id: Sim - looker_list.count, name: Sim}], showLabels: false, showValues: false,
+    y_axes: [{label: '', orientation: left, series: [{axisId: Não - looker_list_certa.count,
+            id: Não - looker_list_certa.count, name: Não}, {axisId: Sim - looker_list_certa.count,
+            id: Sim - looker_list_certa.count, name: Sim}], showLabels: false, showValues: false,
         unpinAxis: false, tickDensity: default, tickDensityCustom: 5, type: linear}]
     x_axis_zoom: true
     y_axis_zoom: true
@@ -620,7 +620,7 @@
     labelColorEnabled: false
     labelColor: "#FFF"
     listen:
-      Região: looker_list.region_code
+      Região: looker_list_certa.region_code
     row: 15
     col: 0
     width: 12
@@ -672,9 +672,9 @@
       type: tag_list
       display: popover
     model: demo_prototipando
-    explore: looker_list
+    explore: looker_list_certa
     listens_to_filters: []
-    field: looker_list.region_code
+    field: looker_list_certa.region_code
   - name: Status da Inscrição
     title: Status da Inscrição
     type: field_filter
@@ -685,6 +685,6 @@
       type: dropdown_menu
       display: popover
     model: demo_prototipando
-    explore: looker_list
+    explore: looker_list_certa
     listens_to_filters: []
-    field: looker_list.rsvp_status
+    field: looker_list_certa.rsvp_status
