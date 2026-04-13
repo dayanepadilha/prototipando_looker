@@ -1,11 +1,15 @@
-- dashboard: prototipando_ideias__looker__gemini__2
+---
+- dashboard: prototipando_ideias__looker__gemini
   title: PROTOTIPANDO IDEIAS - LOOKER + GEMINI
-  layout: newspaper
   preferred_viewer: dashboards-next
   description: ''
-  preferred_slug: jf4MbcIszroLAfcp3eZtjA
+  preferred_slug: mYa48UvdICGIaFPnk1mfto
+  layout: newspaper
+  tabs:
+  - name: ''
+    label: ''
   elements:
-  - title: prototipando
+  - title: prototipando teste
     name: prototipando
     model: demo_prototipando
     explore: looker_list
@@ -32,6 +36,7 @@
     col: 0
     width: 6
     height: 4
+    tab_name: ''
   - title: Confirmados
     name: Confirmados
     model: demo_prototipando
@@ -61,6 +66,7 @@
     col: 6
     width: 6
     height: 4
+    tab_name: ''
   - title: New Tile
     name: New Tile
     model: demo_prototipando
@@ -91,6 +97,7 @@
     col: 12
     width: 6
     height: 4
+    tab_name: ''
   - title: Online
     name: Online
     model: demo_prototipando
@@ -121,6 +128,7 @@
     col: 18
     width: 6
     height: 4
+    tab_name: ''
   - title: Total de Inscritos por Dia
     name: Total de Inscritos por Dia
     model: demo_prototipando
@@ -206,6 +214,7 @@
     col: 0
     width: 24
     height: 8
+    tab_name: ''
   - title: Nomes mais Inscritos
     name: Nomes mais Inscritos
     model: demo_prototipando
@@ -300,6 +309,7 @@
     col: 12
     width: 12
     height: 8
+    tab_name: ''
   - title: Total de Inscritos por Empresa
     name: Total de Inscritos por Empresa
     model: demo_prototipando
@@ -403,6 +413,7 @@
     col: 0
     width: 12
     height: 9
+    tab_name: ''
   - title: Total de Inscritos por Cargo
     name: Total de Inscritos por Cargo
     model: demo_prototipando
@@ -506,6 +517,7 @@
     col: 12
     width: 12
     height: 9
+    tab_name: ''
   - title: Total de Confirmados - Parceiros
     name: Total de Confirmados - Parceiros
     model: demo_prototipando
@@ -625,42 +637,43 @@
     col: 0
     width: 12
     height: 8
+    tab_name: ''
   - name: ''
     type: text
     title_text: ''
-    subtitle_text: ''
     body_text: ''
     row: 14
     col: 0
     width: 24
     height: 1
+    tab_name: ''
   - name: " (2)"
     type: text
     title_text: ''
-    subtitle_text: ''
     body_text: ''
     row: 0
     col: 0
     width: 24
     height: 1
+    tab_name: ''
   - name: " (3)"
     type: text
     title_text: ''
-    subtitle_text: ''
     body_text: ''
     row: 23
     col: 0
     width: 24
     height: 1
+    tab_name: ''
   - name: " (4)"
     type: text
     title_text: ''
-    subtitle_text: ''
     body_text: ''
     row: 5
     col: 0
     width: 24
     height: 1
+    tab_name: ''
   filters:
   - name: Região
     title: Região
